@@ -1,13 +1,22 @@
 package sample;
 
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXToggleButton;
+import animatefx.animation.*;
+import com.jfoenix.controls.*;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import webphone.*;
 
 import java.net.URL;
@@ -43,18 +52,137 @@ public class Controller implements Initializable {
     public JFXCheckBox checkBox;
     public ChoiceBox select;
     public Label textLabel;
+    public ImageView callKey;
+    public ImageView hangupKey;
+    public VBox vBox;
+    public Button hangupOneByOne;
+    public JFXHamburger hamburger;
+    public JFXDrawer drawer;
+    public HBox hBox1;
+    public HBox hBox2;
+    public HBox hBox3;
 
-    Image calling = new Image("sample/assets/phone-call.png");
-    Image hanguping = new Image("sample/assets/phone-call-end.png");
+
+
+    Image calling = new Image("sample/assets/call1.png");
+    Image hanguping = new Image("sample/assets/call2.png");
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        textArea.setVisible(false);
+        toggleBtwCalls.setVisible(false);
+        secBtwCalls.setVisible(false);
+        toggleHangup.setVisible(false);
+        secHangup.setVisible(false);
+        toggleLoop.setVisible(false);
+        loopFor.setVisible(false);
+        addtolist.setVisible(false);
+        select.setVisible(false);
+
+            hangupOneByOne.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+                public void handle(ActionEvent event) {
+
+                if (hangupOneByOne.getAccessibleText().contains("Show Advanced")) {
+                    new FadeIn(textArea).play();
+                   textArea.setVisible(true);
+                    new FadeIn(toggleBtwCalls).play();
+                    toggleBtwCalls.setVisible(true);
+                    new FadeIn(secBtwCalls).play();
+                    secBtwCalls.setVisible(true);
+                    new FadeIn(toggleHangup).play();
+                    toggleHangup.setVisible(true);
+                    new FadeIn(secHangup).play();
+                    secHangup.setVisible(true);
+                    new FadeIn(toggleLoop).play();
+                    toggleLoop.setVisible(true);
+                    new FadeIn(loopFor).play();
+                    loopFor.setVisible(true);
+                    new FadeIn(addtolist).play();
+                    addtolist.setVisible(true);
+                    new FadeIn(select).play();
+                    select.setVisible(true);
+                    hangupOneByOne.setAccessibleText("Hide Advanced");
+                    hangupOneByOne.setText("Hide Advanced");
+
+                } else if(hangupOneByOne.getAccessibleText().contains("Hide Advanced")){
+
+                        new FadeOut(textArea).play();
+                      //  textArea.setVisible(false);
+                        new FadeOut(toggleBtwCalls).play();
+                      //  toggleBtwCalls.setVisible(false);
+                        new FadeOut(secBtwCalls).play();
+                     //   secBtwCalls.setVisible(false);
+                        new FadeOut(toggleHangup).play();
+                      //  toggleHangup.setVisible(false);
+                        new FadeOut(secHangup).play();
+                    //    secHangup.setVisible(false);
+                        new FadeOut(toggleLoop).play();
+                   //     toggleLoop.setVisible(false);
+                        new FadeOut(loopFor).play();
+                     //   loopFor.setVisible(false);
+                        new FadeOut(addtolist).play();
+                    //    addtolist.setVisible(false);
+                        new FadeOut(select).play();
+                   //     select.setVisible(false);
+                    hangupOneByOne.setAccessibleText("Show Advanced");
+                    hangupOneByOne.setText("Show Advanced");
+
+                     }
+                    }
+
+                });
+
+
+
+
+
+        //drawerPane.getStyleClass().add("red-400");
+
+        /*drawer.setDefaultDrawerSize(500);
+        drawer.setOverLayVisible(true);
+        drawer.setResizableOnDrag(false);*/
+       // hBox1.setAlignment(Pos.BOTTOM_CENTER);
+        hBox1.setAlignment(Pos.BASELINE_LEFT);
+        hBox1.setPadding(new Insets(0,15,0,0));
+        hBox2.setAlignment(Pos.BASELINE_LEFT);
+        hBox2.setPadding(new Insets(0,15,0,0));
+        hBox3.setAlignment(Pos.BASELINE_LEFT);
+        hBox3.setPadding(new Insets(0,15,0,0));
+
+
+        vBox.setSpacing(8);
+        vBox.setPadding(new Insets(5,15,5,15));
+
+        secBtwCalls.setPrefWidth(30);
+      //  vBox.getChildren().addAll(textArea,toggleBtwCalls,secBtwCalls,toggleHangup,secHangup,toggleLoop,loopFor,addtolist,select);
+        drawer.setSidePane(vBox);
+        drawer.setOverLayVisible(false);
+        HamburgerBackArrowBasicTransition burgerTask2 = new HamburgerBackArrowBasicTransition(hamburger);
+        burgerTask2.setRate(-1);
+        hamburger.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
+            drawer.setDirection(JFXDrawer.DrawerDirection.LEFT);
+
+            burgerTask2.setRate(burgerTask2.getRate() * -1);
+
+            burgerTask2.play();
+
+            if (drawer.isClosed()) {
+                drawer.open();
+            } else {
+                drawer.close();
+            }
+        });
+
+
+
+
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                phone = new webphone();
 
+                phone = new webphone();
                 String ipaddr = ip_addr.getText();
                 String user = username.getText();
                 String secr = secret.getText();
@@ -64,10 +192,27 @@ public class Controller implements Initializable {
                 phone.API_SetParameter("password", secr);
 //Initialize the sip stack
                 phone.API_Start();
+                new Shake(button).play();
+                button.setText("Registered!");
 
 
             }
         });
+
+
+        /*StackPane drawerPane = new StackPane();
+        drawerPane.getStyleClass().add("red-400");
+        drawerPane.getChildren().add(new JFXButton("Left Content"));
+        drawer.setSidePane(drawerPane);
+        drawer.setDefaultDrawerSize(250);
+        drawer.setOverLayVisible(true);
+        drawer.setDirection(JFXDrawer.DrawerDirection.TOP);
+        drawer.setResizableOnDrag(true);*/
+
+
+
+
+
         textLabel.setVisible(false);
         Tooltip tooltip = new Tooltip();
         tooltip.setText("User can set one destination only or multiple destinations separated by the comma sign");
@@ -323,6 +468,51 @@ public class Controller implements Initializable {
         textLabel.setText("Apparently it does nothing." + "\n" + "\n" +
                 "But nevertheless," + "\n" + "\n" +
                 "Have a nice holidays!");
+    }
+    public void mousePressedcallKey() {
+
+        new Shake(callKey).play();
+        hangupKey.setVisible(true);
+        new Flip(hangupKey).play();
+        String call = calee.getText();
+        String noofcallss = noofcalls.getText();
+        int calls = Integer.valueOf(noofcalls.getText());
+        list = new ArrayList();
+        list.add(call);
+        if (noofcallss.contains("")) {
+            phone.API_Call(-1, call);
+            System.out.println("Nema nista");
+        } else if (!noofcallss.isEmpty()) {
+            List<String> stringList = Pattern.compile(",")
+                    .splitAsStream(call)
+                    .collect(Collectors.toList());
+
+            for (int i = 0; i < calls; i++) {
+
+                stringList.forEach(s -> phone.API_Call(-1, s));
+
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                phone.API_Hangup(-1);
+                System.out.println("ima neki broj");
+                System.out.println(calls);
+               // hangupKey.setVisible(false);
+                return;
+
+
+            }
+        }
+
+
+    }
+    public void mousePressed2hangupKey() {
+       // hangupKey.setVisible(false);
+        new Flip(hangupKey).play();
+        phone.API_Hangup(-1);
+
     }
 
 }
