@@ -20,7 +20,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("sample1.fxml"));
         primaryStage.setTitle("SIPStorm");
-        primaryStage.setScene(new Scene(root, 260, 1000));
+        primaryStage.setScene(new Scene(root, 260, 850));
         primaryStage.setResizable(true);
         primaryStage.show();
 
