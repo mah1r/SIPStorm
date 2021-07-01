@@ -24,14 +24,11 @@
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.weathericons.WeatherIconView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller" style="-fx-background-color: #424242;">
     <children>
 
-        <AnchorPane fx:id="anchorPane3" prefHeight="360.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
-            <children>
-                <JFXDrawer fx:id="drawerRegister" defaultDrawerSize="260.0" layoutY="80" prefHeight="350.00" prefWidth="260.00"></JFXDrawer>
-            </children>
-        </AnchorPane>
+
 
         <AnchorPane id="AnchorPane" fx:id="anchorPane1" prefHeight="360.0" prefWidth="504.0"  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
             <children>
@@ -40,9 +37,22 @@
             </children>
         </AnchorPane>
 
+        <AnchorPane fx:id="anchorPane3" prefHeight="360.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
+            <children>
+                <JFXDrawer fx:id="drawerRegister" defaultDrawerSize="260.0" layoutY="80" prefHeight="350.00" prefWidth="260.00"></JFXDrawer>
+            </children>
+        </AnchorPane>
+
+       <AnchorPane fx:id="anchorPaneDialpad" prefHeight="360.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
+            <children>
+                <JFXDrawer fx:id="drawerDialpad" defaultDrawerSize="260.0" layoutY="430.00" prefHeight="350.00" prefWidth="260.00"></JFXDrawer>
+            </children>
+        </AnchorPane>
 
 
-        <AnchorPane fx:id="anchorPane2" prefHeight="500.0" prefWidth="260.0" layoutY="430.00" layoutX="460.00" style="-fx-background-color: #424242">
+
+
+        <AnchorPane fx:id="anchorPane2" prefHeight="500.0" prefWidth="260.0" layoutY="250.00" layoutX="460.00" style="-fx-background-color: #424242">
             <JFXTabPane fx:id="tabPAne" prefWidth="260" prefHeight="400" style="-fx-background-color: #424242;">
                 <Tab fx:id="tab1"  style="-fx-pref-width=130.00" text="Advanced Options"/>
                 <Tab fx:id="tab2" style="-fx-pref-width=130.00" text="Some other options"/>
@@ -83,18 +93,16 @@
                  </image>
               </ImageView>
         -->
-        <TextField fx:id="ip_addr" layoutX="15.0" layoutY="80.0" prefHeight="38.0" prefWidth="230.0" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e" promptText="Enter IP here" text="10.1.160.91"/>
-        <TextField fx:id="username" layoutX="15.0" layoutY="125.0" prefHeight="38.0" prefWidth="230.0" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e"  promptText="Enter Username" text="200109"/>
-        <TextField fx:id="secret" layoutX="15.0" layoutY="170.0" prefHeight="38.0" prefWidth="230.0" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e"  promptText="Enter Secret" text="8E71_HgqOtokL7*G"/>
+        <TextField fx:id="ip_addr" layoutX="15.0" layoutY="80.0" prefHeight="38.0" prefWidth="230.0" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e" promptText="Enter IP here" text="10.1.160.95"/>
+        <TextField fx:id="username" layoutX="15.0" layoutY="125.0" prefHeight="38.0" prefWidth="230.0" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e"  promptText="Enter Username" text="802"/>
+        <TextField fx:id="secret" layoutX="15.0" layoutY="170.0" prefHeight="38.0" prefWidth="230.0" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e"  promptText="Enter Secret" text="XtFHCoy!2*6NUl2h"/>
         <Button fx:id="button" layoutX="15.0" layoutY="215.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" style="-fx-background-color: #424242; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-font: 16 helvetica; -fx-font-weight:bold; -fx-background-radius: 8px; -fx-border-width: 2px; -fx-border-radius: 8px; -fx-border-color: #fdd835" text="Register Extension"/>
 
 
 
         <Button fx:id="styling2" style="-fx-background-color: #424242;" layoutX="15.00" layoutY="330.00" >
-
             <graphic>
                 <FontAwesomeIconView fx:id="styling3" glyphName="CHEVRON_CIRCLE_LEFT" size="28pt" glyphStyle="-fx-fill: #fdd835" onMousePressed="#stylingPressed2"/>
-
             </graphic>
         </Button>
 
@@ -107,12 +115,24 @@
         </graphic>
         </Button>
 
+        <Button fx:id="dialpad" style="-fx-background-color: #424242;" layoutX="13.00" layoutY="330.00" >
+
+            <graphic>
+                <MaterialDesignIconView fx:id="dialpad1" glyphName="DIALPAD" size="28pt" glyphStyle="-fx-fill: #fdd835" onMousePressed="#stylingPressed"/>
+
+            </graphic>
+        </Button>
 
 
 
 
 
-        <Button fx:id="iconWeb" style="-fx-font-size: 16.0;" layoutY="430" layoutX="430" prefWidth="200.00" prefHeight="40.00"> <graphic> <FontAwesomeIconView glyphName="CLOUD"/> </graphic> </Button>
+
+        <Button fx:id="iconWeb" style="-fx-font-size: 16.0;" layoutY="350" layoutX="430" prefWidth="200.00" prefHeight="40.00"> <graphic> <FontAwesomeIconView glyphName="CLOUD"/> </graphic> </Button>
+
+
+
+
 
 
         <ImageView fx:id="callKey" layoutX="85.0" layoutY="325.0" fitHeight="90.0" fitWidth="90.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" onMousePressed="#mousePressedcallKey" visible="true">
@@ -145,11 +165,8 @@
 
         <VBox fx:id="vBox" prefHeight="400.0" prefWidth="260.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-
                 <Button fx:id="hangupOneByOne"  mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" style="-fx-background-color: #424242; -fx-text-fill: #fdd835; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-font: 16 helvetica; -fx-font-weight:bold; -fx-background-radius: 8px; -fx-border-width: 2px; -fx-border-radius: 8px; -fx-border-color: #fdd835"  text="Show Advanced" accessibleText="Show Advanced" />
-
                 <TextArea fx:id="textArea"  prefHeight="38.0" prefWidth="230.0"  style="-fx-background-color: #9e9e9e; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-width: 2px; -fx-border-color: #fdd835" text="307,208"/>
-
                 <ChoiceBox fx:id="select"   prefHeight="38.0" prefWidth="230.0" style="-fx-background-color: white; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e" accessibleText="Choose Strategy" value="Linear OneByOne">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
@@ -161,9 +178,7 @@
                 </ChoiceBox>
                 <HBox alignment="CENTER" fx:id="hBox1"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
                     <children>
-
                         <JFXToggleButton alignment="CENTER_LEFT" fx:id="toggleBtwCalls"  style="-jfx-toggle-color: #0064b7; -jfx-size: 13.0; -fx-text-fill: #FFFFFF" text="Pause calls"/>
-
                         <VBox alignment="CENTER_RIGHT"  prefWidth="60.0">
                             <children>
                                 <TextField fx:id="secBtwCalls"  prefHeight="38.0" prefWidth="60.0" layoutX="10.00" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-background-radius: 7px; -fx-font-weight:bold;"  promptText="ms"/>
@@ -171,34 +186,95 @@
                         </VBox>
                     </children>
                 </HBox>
-
                 <HBox fx:id="hBox2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
                     <children>
                         <JFXToggleButton fx:id="toggleHangup"  style="-jfx-toggle-color: #0064b7; -jfx-size: 13.0; -fx-text-fill: #FFFFFF" text="Hangup     "/>
-
                         <TextField fx:id="secHangup" prefHeight="38.0" prefWidth="60.0" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-background-radius: 7px; -fx-font-weight:bold;"  promptText="ms"/>
                     </children>
                 </HBox>
-
                 <HBox fx:id="hBox3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
                     <children>
                         <JFXToggleButton fx:id="toggleLoop"  alignment="BASELINE_LEFT" style="-jfx-toggle-color: #0064b7; -jfx-size: 13.0; -fx-text-fill: #FFFFFF" text="Loop          "/>
-
                         <TextField  fx:id="loopFor" prefHeight="38.0" prefWidth="60.0"  style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-background-radius: 7px; -fx-font-weight:bold;"  promptText="" HBox.hgrow="ALWAYS"/>
-
                     </children>
-
                 </HBox>
-
-
                 <Button fx:id="addtolist"  mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" style="-fx-background-color: #424242; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-font: 16 helvetica; -fx-font-weight:bold; -fx-background-radius: 8px; -fx-border-width: 2px; -fx-border-radius: 8px; -fx-border-color: #fdd835"  text="Call multiple Destinations" />
-
                 <Label fx:id="textLabel" layoutY="0.0" layoutX="0.0" prefWidth="260.0" prefHeight="800.0" style="-fx-alignment:center; -fx-background-color: #BDBDBD; -fx-text-fill: black; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-font: 15 helvetica; -fx-font-weight:bold;"/>
-
             </children>
-
         </VBox>
 
+
+
+
+            <!--<VBox fx:id="dialpadVbox" layoutY="430" layoutX="35.00" spacing="15.00" style="-fx-background-color: #424242;" >
+                <children>
+                    <HBox spacing="15.00">
+                        <Button fx:id="one" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="1"> <graphic> <Icons525View glyphName="CIRCLE_1" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <Button fx:id="two" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="480" layoutX="480" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_2" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <Button fx:id="three" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="530" layoutX="530" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_3" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                    </HBox>
+
+                    <HBox spacing="15.00">
+                        <Button fx:id="four" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="580" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_4" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <Button fx:id="five" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="630" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_5" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <Button fx:id="six" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="680" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_6" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                    </HBox>
+
+                    <HBox spacing="15.00">
+                        <Button fx:id="seven" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_7" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <Button fx:id="eight" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_8" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <Button fx:id="nine" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_9" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                    </HBox>
+
+                    <HBox spacing="15.00">
+                        <Button fx:id="asterisk" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="ASTERISK2" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <Button fx:id="zero" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <Icons525View glyphName="CIRCLE_0" size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <Button fx:id="hash" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1px; -fx-border-radius: 25px; -fx-border-color: #fdd835" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00"> <graphic> <FontAwesomeIconView glyphName="HASHTAG" size="20pt" glyphStyle="-fx-fill: #fdd835" /> </graphic> </Button>
+                    </HBox>
+                    <HBox spacing="15.00">
+                        <Button fx:id="sendDtmf" style="-fx-font-size: 16.0; -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 2px; -fx-border-radius: 8px; -fx-border-color: #fdd835" prefWidth="80.00" prefHeight="50.00"> <graphic> <MaterialIconView glyphName="DIALER_SIP"  size="20pt" glyphStyle="-fx-fill: #fdd835"/> </graphic> </Button>
+                        <TextField fx:id="dtmfText" layoutX="15.0" layoutY="80.0" prefWidth="95.00" prefHeight="50.00" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e" promptText="DTMF"/>
+                    </HBox>
+                </children>
+            </VBox>-->
+
+        <VBox  fx:id="dialpadVbox" layoutY="430" layoutX="65.00"   style="-fx-background-color: #424242;">
+            <children>
+                <HBox spacing="15.00">
+                    <Button fx:id="one" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="1" text="1"></Button>
+                    <Button fx:id="two" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="480" layoutX="480" prefWidth="50.00" prefHeight="50.00" accessibleText="2" text="2">  </Button>
+                    <Button fx:id="three" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="530" layoutX="530" prefWidth="50.00" prefHeight="50.00" accessibleText="3" text="3">  </Button>
+                </HBox>
+
+                <HBox spacing="15.00">
+                    <Button fx:id="four" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="580" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="4" text="4">  </Button>
+                    <Button fx:id="five" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="630" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="5" text="5"> </Button>
+                    <Button fx:id="six" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="680" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="6" text="6"> </Button>
+                </HBox>
+
+                <HBox spacing="15.00">
+                    <Button fx:id="seven" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="7" text="7">  </Button>
+                    <Button fx:id="eight" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="8" text="8">  </Button>
+                    <Button fx:id="nine" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="9" text="9">  </Button>
+                </HBox>
+
+                <HBox spacing="15.00">
+                    <Button fx:id="asterisk" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00"  accessibleText="*" text="*">  </Button>
+                    <Button fx:id="zero" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="0" text="0">  </Button>
+                    <Button fx:id="hash" style="-fx-font: 25 helvetica; -fx-text-fill: white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #424242; -fx-background-radius: 25px; -fx-border-width: 1.0px; -fx-border-radius: 25px; -fx-border-color: #9e9e9e" layoutY="430" layoutX="430" prefWidth="50.00" prefHeight="50.00" accessibleText="#" text="#">  </Button>
+                </HBox>
+                <HBox spacing="15.00">
+                    <Button fx:id="sendDtmf" style="-fx-font-size: 20; -fx-text-fill:white; -fx-font-weight:bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );  -fx-background-color: #424242; -fx-background-radius: 8px; -fx-border-width: 1.0px; -fx-border-radius: 8px; -fx-border-color: #9e9e9e" prefWidth="80.00" prefHeight="50.00" accessibleText="SEND" text="➤">  </Button>
+                    <TextField fx:id="dtmfText" layoutX="15.0" layoutY="80.0" prefWidth="85.00" prefHeight="50.00" style="-fx-text-fill: #424242; -fx-font: 15 helvetica; -fx-font-weight:bold; -fx-background-radius: 7px; -fx-background-color: #9e9e9e" promptText="DTMF"/>
+                </HBox>
+            </children>
+        </VBox>
+
+
+
+
+
+        <Button fx:id="newAsterisk"  mnemonicParsing="false" layoutY="550.0" layoutX="550.0" prefHeight="50.0" prefWidth="230.0" style="-fx-background-color: #424242; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-font: 16 helvetica; -fx-font-weight:bold; -fx-background-radius: 8px; -fx-border-width: 2px; -fx-border-radius: 8px; -fx-border-color: #fdd835"  text="Test New Asterisk Lib" />
 
 
 
